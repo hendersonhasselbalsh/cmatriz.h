@@ -2,8 +2,6 @@
 #include <cmath>
 #include <cstdlib>
 #include <iomanip>
-#include <stdarg.h>
-#include <stack>
 
 using namespace std;
 
@@ -39,7 +37,6 @@ class matriz{
         void operator=(double* l);
         
 
-
         void print(const char* mensage = NULL);
         void read(const char* mensage = NULL);
         int escalonar();
@@ -51,8 +48,6 @@ class matriz{
         matriz cof();
         matriz adj();
         
-
-        
  
     private:
 
@@ -61,10 +56,9 @@ class matriz{
         friend void troca(double& a, double& b);
         void escalona__();
 
-
-
 };
 
+//--------------- construtor ------------------
 
 matriz::matriz(int _row, int _column)
 {
@@ -83,6 +77,7 @@ matriz::matriz(int ordem)
 }
 
 
+//------------  operadores ------------------
 
 matriz operator+(matriz& a, matriz& b)
 {
@@ -277,6 +272,132 @@ void matriz::operator=(double* l)
         }
     }
 
+}
+
+ostream& operator<<(ostream& os, const matriz m)
+{
+    for(int i = 0; i < m.row; i++)
+    {
+        for(int j = 0; j < m.column; j++)
+        {
+            os << setw(4) << m.m[i][j] << "  ";
+        }
+        
+        os << endl;
+    }
+
+    os << endl << endl;
+
+ return os;
+}
+
+
+//-------------- funcoues membros -------------------
+
+void matriz::print(const char* mensagem)
+{
+    if( mensagem ) { cout << mensagem << endl; }
+    
+    for(int i = 0; i < this->row; i++)
+    {
+        for(int j = 0; j < this->column; j++)
+        {
+            cout << setw(4) << m[i][j] << "  ";
+        }
+        
+        cout << endl;
+    } 
+    cout << endl << endl; 
+}
+
+void matriz::read(const char* mensagem)
+{
+    if( mensagem ) { cout << mensagem << endl; }
+
+    for(int i = 0; i < this->row; i++)
+    {
+        for(int j = 0; j < this->column; j++)
+        {
+            cin >> this->m[i][j];
+        }
+    }
+}
+
+int matriz::escalonar()
+{
+    int cont = 0;
+    for(int i = 0; i < this->row - 1; i++)
+    {
+        if(this->m[i][i] == 0)  // ve se os elementos da diagonal principal é zero
+        {
+            for(int k = i + 1; k < this->row; k++) // budcar linha que não soa zero
+            {
+                if(this->m[k][k] != 0)
+                {
+                    for(int j = 0; j < this->column; j++)
+                    {
+                        troca(this->m[i][j], this->m[k][j]);
+                    }
+                    cont++;
+                }
+            }
+        }
+
+        if(this->m[i][i] != 0)
+        {
+            for(int j = i + 1; j < this->row; j++)
+            {
+                double factor = (-1.0) * this->m[j][i] / this->m[i][i];
+
+                for(int k = i; k < this->column; k++)
+                {
+                    this->m[j][k] = this->m[j][k] + (factor * this->m[i][k]);
+                }
+            }
+        }
+    }
+
+ return cont;
+}
+
+int matriz::triangular()
+{
+    int cont = 0;
+
+    for(int i = 0; i < this->column - 1; i++)
+    {
+        if(this->m[i][i] == 0)
+        {
+            for(int j = i + 1; j < this->column; j++)
+            {
+                if(this->m[j][j])
+                {
+                    for(int k = 0; k < this->row; k++)
+                    {
+                        troca(this->m[k][j], this->m[k][i]);
+                    }
+                    cont++;
+                }
+            }
+        }
+
+        if(this->m[i][i] != 0)
+        {
+            for(int j = i + 1; j < this->column; j++)
+            {
+                double factor = (-1.0) * this->m[i][j] / this->m[i][i];
+
+                for(int k = i; k < this->column; k++)
+                {
+                    this->m[k][j] = this->m[k][j] + ( factor * this->m[k][i] );
+                }
+            }
+        }
+    }
+
+ return cont;
+}
+
 void matriz::escalona__()
 {
     for(int i = this->row - 1; i > 0; i--)
@@ -466,13 +587,5 @@ matriz matriz::adj()
 
  return aux;
 }
-
-
-
-
-
-
-
-
 
 #endif
