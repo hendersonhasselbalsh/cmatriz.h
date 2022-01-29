@@ -1,0 +1,603 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Compile",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "simple c++"
+        },
+        
+        /*{
+            "type": "cppbuild",
+            "label": "Debug",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${relativeFileDirname}\\*.cpp",
+                "-o",
+                "${fileDirname}\\main.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "compilador: C:\\MinGW\\bin\\g++.exe"
+        },*/
+        
+        {
+            "type": "shell",
+            "label": "Compile and Run",
+            "command": " cd ${fileDirname",   //".\\${fileBasenameNoExtension}.exe",
+            "args":[
+                
+                "${fileBasenameNoExtension}.exe"
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "dependsOn": "Compilar",
+            "problemMatcher": []
+        },
+        
+        {
+            "type": "cppbuild",
+            "label": "Windows compile",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+
+                "-lgdi32",
+                "-luser32",
+                "-lkernel32",
+                "-lcomctl32",
+                "-lm",
+                "-mwindows",
+
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ WINDOWS file (MinGW)"
+        },
+
+        /*{
+            "type": "cppbuild",
+            "label": "SDL",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-Wall",
+                "-pedantic",
+                
+                "-I", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\sdl\\SDL2",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\sdl\\lib",
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2",
+
+                "-o0",
+                "-std=c++11",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ SDL file (MinGW)"
+        },*/
+
+        /*{
+            "type": "cppbuild",
+            "label": "OpenCV",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+
+
+                "-I","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\opencv-4.5.2\\include",
+                "-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\opencv-4.5.2\\x64\\mingw\\bin", 
+                //"-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\opencv-4.5.2\\x64\\mingw\\lib",               
+                "-llibopencv_calib3d452",
+                "-llibopencv_core452",
+                "-llibopencv_dnn452",
+                "-llibopencv_features2d452",
+                "-llibopencv_flann452",
+                "-llibopencv_gapi452",
+                "-llibopencv_highgui452",
+                "-llibopencv_imgcodecs452",
+                "-llibopencv_imgproc452",
+                "-llibopencv_ml452",
+                "-llibopencv_objdetect452",
+                "-llibopencv_photo452",
+                "-llibopencv_stitching452",
+                "-llibopencv_video452",
+                "-llibopencv_videoio452",
+
+                
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ opencv (MinGW-w64)"
+        },*/
+
+        /*{
+            "type": "cppbuild",
+            "label": "Allegro",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+
+
+                "-I","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\allegro\\include",
+                "-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\allegro\\lib", 
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.9.2\\include\\c++\\allegro\\bin",               
+                
+
+                "-lliballegro",
+                "-lliballegro_acodec",
+                "-lliballegro_acodec-debug",
+                "-lliballegro_audio",
+                "-lliballegro_audio-debug",
+                "-lliballegro_color",
+                "-lliballegro_color-debug",
+                "-lliballegro_dialog",
+                "-lliballegro_dialog-debug",
+                "-lliballegro_font",
+                "-lliballegro_font-debug",
+                "-lliballegro_image",
+                "-lliballegro_image-debug",
+                "-lliballegro_main",
+                "-lliballegro_main-debug",
+                "-lliballegro_memfile",
+                "-lliballegro_memfile-debug",
+                "-lliballegro_monolith",
+                "-lliballegro_monolith-debug",
+                "-lliballegro_physfs",
+                "-lliballegro_physfs-debug",
+                "-lliballegro_primitives",
+                "-lliballegro_primitives-debug",
+                "-lliballegro_ttf",
+                "-lliballegro_ttf-debug",
+                "-lliballegro_video",
+                "-lliballegro_video-debug",
+                "-lliballegro-debug",
+
+                "-lallegro_acodec-5.2",
+                "-lallegro_acodec-debug-5.2",
+                "-lallegro_audio-5.2",
+                "-lallegro_audio-debug-5.2",
+                "-lallegro_color-5.2",
+                "-lallegro_color-debug-5.2",
+                "-lallegro_dialog-5.2",
+                "-lallegro_dialog-debug-5.2",
+                "-lallegro_font-5.2",
+                "-lallegro_font-debug-5.2",
+                "-lallegro_image-5.2",
+                "-lallegro_image-debug-5.2",
+                "-lallegro_main-5.2",
+                "-lallegro_main-debug-5.2",
+                "-lallegro_memfile-5.2",
+                "-lallegro_memfile-debug-5.2",
+                "-lallegro_monolith-5.2",
+                "-lallegro_monolith-debug-5.2",
+                "-lallegro_physfs-5.2",
+                "-lallegro_physfs-debug-5.2",
+                "-lallegro_primitives-5.2",
+                "-lallegro_primitives-debug-5.2",
+                "-lallegro_ttf-5.2",
+                "-lallegro_ttf-debug-5.2",
+                "-lallegro_video-5.2",
+                "-lallegro_video-debug-5.2",
+                "-lallegro-5.2",
+                "-lallegro-debug-5.2",
+
+                
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ allegro (MinGW-w64)"
+        },*/
+
+        /*{
+            "type": "cppbuild",
+            "label": "OpenGL",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+                "-I", "C:\\Users\\W\\Desktop\\Dev-Cpp\\mingw64(sjlj)\\x86_64-w64-mingw32\\include",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\mingw64(sjlj)\\x86_64-w64-mingw32\\lib",
+
+
+                "-lopengl32",
+                "-lglew32",
+                "-lfreeglut",
+                "-lglu32"
+
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "simple c++ (Mingw-w64  sjlj )"
+        },*/
+
+        {
+            "type": "cppbuild",
+            "label": "OpenCV",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+
+                "-I","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\include",
+                "-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\bin",
+                "-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\lib", 
+                "-llibopencv_calib3d452",
+                "-llibopencv_core452",
+                "-llibopencv_dnn452",
+                "-llibopencv_features2d452",
+                "-llibopencv_flann452",
+                "-llibopencv_gapi452",
+                "-llibopencv_highgui452",
+                "-llibopencv_imgcodecs452",
+                "-llibopencv_imgproc452",
+                "-llibopencv_ml452",
+                "-llibopencv_objdetect452",
+                "-llibopencv_photo452",
+                "-llibopencv_stitching452",
+                "-llibopencv_video452",
+                "-llibopencv_videoio452",
+
+                
+            
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ opencv (MinGW-w64) \"naõ apagara verção noão oficial\""
+        },
+
+        {
+            "type": "cppbuild",
+            "label": "Allegro",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+
+                "-I","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\include",
+                "-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\bin",
+                "-L","C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\lib",                
+                
+                "-lliballegro",
+                "-lliballegro_acodec",
+                "-lliballegro_acodec-debug",
+                "-lliballegro_audio",
+                "-lliballegro_audio-debug",
+                "-lliballegro_color",
+                "-lliballegro_color-debug",
+                "-lliballegro_dialog",
+                "-lliballegro_dialog-debug",
+                "-lliballegro_font",
+                "-lliballegro_font-debug",
+                "-lliballegro_image",
+                "-lliballegro_image-debug",
+                "-lliballegro_main",
+                "-lliballegro_main-debug",
+                "-lliballegro_memfile",
+                "-lliballegro_memfile-debug",
+                "-lliballegro_monolith",
+                "-lliballegro_monolith-debug",
+                "-lliballegro_physfs",
+                "-lliballegro_physfs-debug",
+                "-lliballegro_primitives",
+                "-lliballegro_primitives-debug",
+                "-lliballegro_ttf",
+                "-lliballegro_ttf-debug",
+                "-lliballegro_video",
+                "-lliballegro_video-debug",
+                "-lliballegro-debug",
+
+                "-lallegro_acodec-5.2",
+                "-lallegro_acodec-debug-5.2",
+                "-lallegro_audio-5.2",
+                "-lallegro_audio-debug-5.2",
+                "-lallegro_color-5.2",
+                "-lallegro_color-debug-5.2",
+                "-lallegro_dialog-5.2",
+                "-lallegro_dialog-debug-5.2",
+                "-lallegro_font-5.2",
+                "-lallegro_font-debug-5.2",
+                "-lallegro_image-5.2",
+                "-lallegro_image-debug-5.2",
+                "-lallegro_main-5.2",
+                "-lallegro_main-debug-5.2",
+                "-lallegro_memfile-5.2",
+                "-lallegro_memfile-debug-5.2",
+                "-lallegro_monolith-5.2",
+                "-lallegro_monolith-debug-5.2",
+                "-lallegro_physfs-5.2",
+                "-lallegro_physfs-debug-5.2",
+                "-lallegro_primitives-5.2",
+                "-lallegro_primitives-debug-5.2",
+                "-lallegro_ttf-5.2",
+                "-lallegro_ttf-debug-5.2",
+                "-lallegro_video-5.2",
+                "-lallegro_video-debug-5.2",
+                "-lallegro-5.2",
+                "-lallegro-debug-5.2",
+
+                
+                
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ allegro (MinGW-w64) HÁ UMA VERSÃO ANTERIOR NÃO APAGAR"
+        },
+
+        {
+            "type": "cppbuild",
+            "label": "SDL",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-Wall",
+                "-pedantic",
+                
+                
+                "-I", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\include",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\bin",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\lib",
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2",
+                "-llibjpeg-9",
+                "-llibpng16-16",
+                "-llibtiff-5",
+                "-llibwebp-7",
+                "-lSDL2_image",
+                "-lzlib1",
+
+
+                "-o0",
+                "-std=c++11",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "c++ SDL file (MinGW-w64) nao apagar o outro"
+        },
+
+        {
+            "type": "cppbuild",
+            "label": "OpenGL",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+                "-I", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\include",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\bin",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\lib",
+
+
+                "-lopengl32",
+                "-lglew32",
+                "-lfreeglut",
+                "-lglu32"
+
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "simple c++ (Mingw-w64) MANTENHA o outro"
+        },
+
+        {
+            "type": "cppbuild",
+            "label": "SFML",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+                "-I", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\include",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\bin",
+                "-L", "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW-w64\\x86_64-w64-mingw32\\lib",
+                "-lopenal32",
+                "-lsfml-audio-2",
+                "-lsfml-audio-d-2",
+                "-lsfml-graphics-2",
+                "-lsfml-graphics-d-2",
+                "-lsfml-network-2",
+                "-lsfml-network-d-2",
+                "-lsfml-system-2",
+                "-lsfml-system-d-2",
+                "-lsfml-window-2",
+                "-lsfml-window-d-2",
+
+
+                
+
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "simple c++ (Mingw-w64) MANTENHA o outro"
+        },
+
+    ]
+}

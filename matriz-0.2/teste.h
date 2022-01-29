@@ -12,7 +12,6 @@ using namespace std;
 
 class matriz{
 
-
     public:
 
         int row = 0;

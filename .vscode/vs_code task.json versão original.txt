@@ -1,0 +1,77 @@
+/////// vs_code task.json versão original////////
+/////////////////////////////////////////////////
+
+
+
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Compilar",
+            "command": "C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "compilador: C:\\Users\\W\\Desktop\\Dev-Cpp\\MinGW64\\bin\\g++.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Debug",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-pedantic",
+                "-o0",
+                "-std=c++11",
+                "${relativeFileDirname}\\*.cpp",
+                "-o",
+                "${fileDirname}\\main.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "compilador: C:\\MinGW\\bin\\g++.exe"
+        },
+        {
+            "type": "shell",
+            "label": "Compile and Run",
+            "command": ".\\${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "dependsOn": "Compilar",
+            "problemMatcher": []
+        }
+    ]
+}
