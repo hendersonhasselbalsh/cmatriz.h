@@ -18,7 +18,6 @@ class matriz{
 
         int row = 0;
         int column = 0;
-        vector<double> linha;
 
         matriz(int _row, int _column);
         matriz(int ordem);
@@ -312,6 +311,7 @@ istream& operator>>(istream& os, matriz& m)
 
 vector<double> matriz::operator[](int _row)
 {
+    vector<double> linha;
     for(int i = 0; i < this->column; i++){
         this->linha.push_back( this->m[_row][i] );
     }
